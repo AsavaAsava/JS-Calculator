@@ -9,6 +9,9 @@ const b7 =document.querySelector('input[name="b7"]');
 const b8 =document.querySelector('input[name="b8"]');
 const b9 =document.querySelector('input[name="b9"]');
 
+const lBr =document.querySelector('input[name="lBr"]');
+const rBr =document.querySelector('input[name="rBr"]');
+
 const addb =document.querySelector('input[name="addb"]');
 const subb =document.querySelector('input[name="subb"]');
 const mulb =document.querySelector('input[name="mulb"]');
@@ -17,51 +20,18 @@ const divb =document.querySelector('input[name="divb"]');
 const pointb =document.querySelector('input[name="potb"]');
 const resultb =document.querySelector('input[name="resultb"]');
 const resultDisplay =document.querySelector('input[name="displayResult"]');
+const clearB = document.querySelector('input[name="clear"]');
+const delB = document.querySelector('input[name="delete"]');
 
-let num1
-let num2
 
-let pvalue =1
-let result
-let op
 
-b0.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b0.value).toString()
-    pvalue = pvalue*10
+
+let addExpression = (bValue) =>{
+    resultDisplay.value = (resultDisplay.value + bValue)
+}
+clearB.addEventListener("click",() =>{
+    resultDisplay.value="";
 })
-b1.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b1.value).toString()
-    pvalue = pvalue*10  
-})
-b2.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b2.value).toString()
-    pvalue = pvalue*10 
-})
-b3.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b3.value).toString()
-    pvalue = pvalue*10
-})
-b4.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b4.value).toString()
-    pvalue = pvalue*10
-})
-b5.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b5.value).toString()
-    pvalue = pvalue*10
-})
-b6.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b6.value).toString()
-    pvalue = pvalue*10
-})
-b7.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b7.value).toString()
-    pvalue = pvalue*10
-})
-b8.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b8.value).toString()
-    pvalue = pvalue*10
-})
-b9.addEventListener("click", () => {
-    resultDisplay.value = (parseInt(indicator.textContent * pvalue) + b9.value).toString()
-    pvalue = pvalue*10
+delB.addEventListener("click",() =>{
+    resultDisplay.value=resultDisplay.value.slice(0,-1)
 })
